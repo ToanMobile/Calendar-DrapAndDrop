@@ -1,0 +1,26 @@
+[
+  {
+    "categoryName": "Calendar",
+    "mobileCategoryId": 3,
+    "webCategoryId": 3,
+    "controlList": [
+      {
+        "title": "Event Calendar",
+        "description": "Allows you to easily visualize and schedule appointments",
+        "image": "images/calendar.png",
+        "status": "Updated",
+        "displayType": "tab",
+        "controlId": 1,
+        "subItems": [
+          {
+            "type": "sample",
+            "title": "Drag and Drop",
+            "status": "New",
+            "key": "drag_and_drop_calendar",
+            "codeLink": "https://github.com/syncfusion/flutter-examples/tree/master/lib/samples/calendar/drag_and_drop_calendar.dart"
+          }
+        ]
+      }
+    ]
+  }
+]
