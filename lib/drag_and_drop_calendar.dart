@@ -1,13 +1,11 @@
 ///Dart imports
 import 'dart:math';
 
+import 'package:calander_drap_drop/src/calendar/calendar.dart';
 ///Package imports
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-
-///calendar import
-import 'package:syncfusion_flutter_calendar/calendar.dart';
 
 ///Local import
 import '../../model/sample_view.dart';
@@ -169,7 +167,20 @@ class _DragAndDropCalendarState extends SampleViewState {
       onViewChanged: viewChangedCallback,
       allowDragAndDrop: true,
       showDatePickerButton: true,
-      dragAndDropSettings: const DragAndDropSettings(indicatorTimeFormat: 'hh:mm a'),
+      dragAndDropSettings: const DragAndDropSettings(
+        indicatorTimeFormat: 'hh:mm a',
+        allowNavigation: true,
+        allowScroll: true,
+        autoNavigateDelay: Duration(seconds: 1),
+        showTimeIndicator: true,
+      ),
+      onTap: (CalendarTapDetails details) {
+        DateTime date = details.date!;
+        dynamic appointments = details.appointments;
+        CalendarElement view = details.targetElement;
+        print(date);
+        print(appointments);
+      },
       monthViewSettings: const MonthViewSettings(appointmentDisplayMode: MonthAppointmentDisplayMode.appointment),
       timeSlotViewSettings: const TimeSlotViewSettings(minimumAppointmentDuration: Duration(minutes: 60)),
     );
